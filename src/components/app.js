@@ -1,20 +1,40 @@
 angular.module('video-player')
 
-.controller('appController', function($scope, $window) {
-  $scope.videos = $window.exampleVideoData;
-})
+// .controller('appController', function($scope, $window) {
+//   this.videos = $window.exampleVideoData;
+// })
 
 .directive('app', function() {
   return {
-    // scope: {
-    //   allVideos: '<'
+    // handleOnClick: function() {
+    //   this.currentVideo = video;
     // },
-    // //write the directive code that will render this component to the DOM
-    // controllerAs: 'ctrl',
-    // bindToController: true,
-    controller: function ($scope) {
-      console.log('this is in app.js', $scope);
+
+    // scope: {
+    // },
+    //   videos: '<'
+    // },
+    controller: function ($window) {
+      this.videos = $window.exampleVideoData;
+      this.currentVideo = this.videos[1];
+      console.log(this.videos);
     },
+    controllerAs: 'ctrl',
+    bindToController: true,
     templateUrl: 'src/templates/app.html'
   };
 });
+
+// app.directive('someDirective', function () {
+//   return {
+//     scope: {
+//       name: '='
+//     },
+//     controller: function () {
+//       this.name = 'Pascal';
+//     },
+//     controllerAs: 'ctrl',
+//     bindToController: true,
+//     template: '<div>{{ctrl.name}}</div>'
+//   };
+// });
