@@ -1,6 +1,11 @@
 <div class="video-player">
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="{{'https://www.youtube.com/embed/' + ctrl.currentVideo.id.videoId}}" allowFullScreen></iframe>
+    <iframe 
+      class="embed-responsive-item" 
+      src="{{'https://www.youtube.com/embed/' + ctrl.currentVideo.id.videoId}}" 
+      allowFullScreen
+      onClickHandler="ctrl.onClickHandler">
+    </iframe>
   </div>
   <div class="video-player-details">
     <h3>{{ctrl.currentVideo.snippet.channelTitle}}</h3>

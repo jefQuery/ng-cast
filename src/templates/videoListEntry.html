@@ -3,7 +3,9 @@
     <img class="media-object" src={{video.snippet.thumbnails.default.url}} />
   </div>
   <div class="media-body">
-    <div class="video-list-entry-title">{{video.snippet.title}}</div>
+    <div class="video-list-entry-title" ng-Click="onClickHandler($index)">{{video.snippet.title}}</div>
     <div class="video-list-entry-detail">{{video.snippet.description}}</div>
   </div>
 </li>
+
+<!-- video.snippet.title = 'butthead' -->

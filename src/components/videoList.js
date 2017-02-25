@@ -3,7 +3,8 @@ angular.module('video-player')
   // debugger;
   return {
     scope: {
-      videos: '<'
+      videos: '<',
+      currentVideo: '='
     },
     // // // controllerAs: 'ctrl',
     // bindToController: true,

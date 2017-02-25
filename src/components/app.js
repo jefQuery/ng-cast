@@ -15,9 +15,14 @@ angular.module('video-player')
     //   videos: '<'
     // },
     controller: function ($window) {
-      this.videos = $window.exampleVideoData;
-      this.currentVideo = this.videos[1];
-      console.log(this.videos);
+      var ctrl = this;
+      ctrl.videos = $window.exampleVideoData;
+      ctrl.currentVideo = this.videos[0];
+      console.log("ctrl", ctrl);
+      ctrl.onClickHandler = function(index) {
+        console.log(index);
+        ctrl.currentVideo = ctrl.videos[index]
+      };
     },
     controllerAs: 'ctrl',
     bindToController: true,

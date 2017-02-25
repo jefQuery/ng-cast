@@ -2,6 +2,8 @@
 <!-- "for" video in videoList ng-tag thingy -->
   
   <video-list-entry
-  ng-repeat="video in videos">
+    ng-repeat="video in videos track by $index" index=$index
+    onClickHandler="ctrl.onClickHandler"
+  >
   <h5><em>videoListEntry</em> </h5></video-list-entry>
 </ul>

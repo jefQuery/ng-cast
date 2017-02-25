@@ -2,9 +2,9 @@ angular.module('video-player')
 
 .directive('videoPlayer', function() {
   return {
-    // TODO
+    // // TODO
     // scope: {
-    //   currentVideo: '<'
+    //   currentVideo: '='
     // },
     controller: function($scope) {
       console.log($scope)
