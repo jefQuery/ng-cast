@@ -4,14 +4,15 @@ angular.module('video-player')
   return {
     scope: {
       videos: '<',
-      currentVideo: '='
+      currentVideo: '<',
+      selectVideo: '<'
     },
-    // // // controllerAs: 'ctrl',
-    // bindToController: true,
-    // controller: function($scope) {
-    //   // $scope.videos = window.exampleVideoData;
-    //   console.log('this is in videoList', $scope);
-    // },
+    controllerAs: 'ctrl',
+    bindToController: true,
+    controller: function($scope) {
+      // $scope.videos = window.exampleVideoData;
+      console.log('this is in videoList', $scope);
+    },
     templateUrl: 'src/templates/videoList.html'
   };
 });

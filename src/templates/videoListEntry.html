@@ -1,11 +1,17 @@
 <li class="video-list-entry media" >
   <div class="media-left">
-    <img class="media-object" src={{video.snippet.thumbnails.default.url}} />
+    <img class="media-object" ng-src={{ctrl.video.snippet.thumbnails.default.url}} />
   </div>
   <div class="media-body">
-    <div class="video-list-entry-title" ng-Click="onClickHandler($index)">{{video.snippet.title}}</div>
-    <div class="video-list-entry-detail">{{video.snippet.description}}</div>
+    <div class="video-list-entry-title" ng-click="ctrl.selectVideo(ctrl.video)">{{ctrl.video.snippet.title}}</div>
+    <div class="video-list-entry-detail">{{ctrl.video.snippet.description}}</div>
   </div>
 </li>
 
-<!-- video.snippet.title = 'butthead' -->
+
+<!-- $http provider should receive a params object with the following properties:
+query - the string to search for
+maxResults - the maximum number of videos to get, which should default to 5
+key - an authorized YouTube Browser API key
+Only fetch embeddable videos
+ -->

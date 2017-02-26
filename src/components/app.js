@@ -10,23 +10,28 @@ angular.module('video-player')
     //   this.currentVideo = video;
     // },
 
-    // scope: {
-    // },
+    scope: {
+    },
     //   videos: '<'
     // },
-    controller: function ($window) {
-      var ctrl = this;
-      ctrl.videos = $window.exampleVideoData;
-      ctrl.currentVideo = this.videos[0];
-      console.log("ctrl", ctrl);
-      ctrl.onClickHandler = function(index) {
-        console.log(index);
-        ctrl.currentVideo = ctrl.videos[index]
+    templateUrl: 'src/templates/app.html',
+    controller: function () {
+      this.getData = function(data) {
+        this.videos = data;
       };
+      this.videos = window.exampleVideoData;
+      this.currentVideo = this.videos[0];
+      this.selectVideo = (video) => {
+        console.log(video);
+        this.currentVideo = video;
+      };
+      this.onClick = () => {
+
+      };
+      console.log('app this', this);
     },
     controllerAs: 'ctrl',
-    bindToController: true,
-    templateUrl: 'src/templates/app.html'
+    bindToController: true
   };
 });
 
