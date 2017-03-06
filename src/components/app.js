@@ -1,34 +1,21 @@
 angular.module('video-player')
-
-// .controller('appController', function($scope, $window) {
-//   this.videos = $window.exampleVideoData;
-// })
-
-.directive('app', function() {
+.directive('app', function(youTube) {
   return {
-    // handleOnClick: function() {
-    //   this.currentVideo = video;
-    // },
 
     scope: {
     },
-    //   videos: '<'
-    // },
     templateUrl: 'src/templates/app.html',
     controller: function () {
-      this.getData = function(data) {
-        this.videos = data;
+      this.searchService = youTube;
+      this.searchResults = (data) => {
+        this.videos = data || window.exampleVideoData;
+        this.currentVideo = this.videos[0];
       };
-      this.videos = window.exampleVideoData;
-      this.currentVideo = this.videos[0];
-      this.selectVideo = (video) => {
-        console.log(video);
-        this.currentVideo = video;
-      };
-      this.onClick = () => {
-
+      this.selectVideo = (vid) => {
+        this.currentVideo = vid;
       };
       console.log('app this', this);
+      youTube.search('javascript tutorial', this.searchResults);
     },
     controllerAs: 'ctrl',
     bindToController: true
